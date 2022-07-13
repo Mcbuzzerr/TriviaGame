@@ -144,18 +144,15 @@ let shuffle = (array) => {
 dropdown.addEventListener("click", evt => {
     document.getElementById("dropContent").classList.toggle("show");
     document.getElementById("dropArrow").classList.toggle("up");
+
+    
 })
 
-window.onclick = function(event) {
-    if (!event.target.matches(".drop-btn")) {
-        var dropdowns = document.getElementsByClassName("drop-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-                openDropdown.classList.remove("show")
-            }
-        }
+window.onclick = (evt) => {
+    if (!evt.target.matches(".drop-btn"))
+    var dropdowns = document.getElementById("dropContent");
+    console.log("Gyork");
+    if (dropdowns.classList.contains("show")) {
+        dropdowns.classList.remove("show")
     }
 }
-// End of Dropdown Menu
